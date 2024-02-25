@@ -17,4 +17,4 @@ Then(/^Hafis should see home page$/, async() => {
 
 Then(/^Hafis should see error "(.*)"$/, async (dynamicMessage) => {
     await LoginPage.validateLockedOutUserError(dynamicMessage)
-})
+}) 
