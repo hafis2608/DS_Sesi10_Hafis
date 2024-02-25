@@ -16,10 +16,10 @@ class LoginPage extends Page {
     }
 
     async validateLockedOutUserError (dynamicMessage) {
-        await this.errorLockedOutUser(dynamicMessage).waitForDisplayed({ timeout: 2500 });
-        await expect(this.errorLockedOutUser(dynamicMessage)).toBeDisplayed()
+        await errorLockedOutUser(dynamicMessage).waitForDisplayed({ timeout: 2500 });
+        await expect(errorLockedOutUser(dynamicMessage)).toBeDisplayed()
     }
-
+    
     open () {
         return super.open('/'); // NOTE: will open https://www.saucedemo.com/
     }

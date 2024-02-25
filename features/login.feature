@@ -1,5 +1,5 @@
 Feature: Swag Labs - Login
-  Background: Initial step
+  Background: User on the login page
     Given Hafis is on the login page
 
   Scenario: As a standard_user, I want to log in successfully
