@@ -14,12 +14,16 @@ class LoginPage extends Page {
         await this.fieldPassword.setValue(process.env.PASSWORD_SAUCEDEMO);
         await this.buttonLogin.click();
     }
-
     async validateLockedOutUserError (dynamicMessage) {
-        await errorLockedOutUser(dynamicMessage).waitForDisplayed({ timeout: 2500 });
-        await expect(errorLockedOutUser(dynamicMessage)).toBeDisplayed()
+        await this.errorLockedOutUser(dynamicMessage).waitForDisplayed({ timeout: 2500 });
+        await expect(this.errorLockedOutUser(dynamicMessage)).toBeDisplayed()
     }
-    
+    async login (name) {
+        await this.fieldUsername.waitForDisplayed({ timeout: 2500 });
+        await this.fieldUsername.setValue(name);
+        await this.fieldPassword.setValue(process.env.PASSWORD_SAUCEDEMO);
+        await this.buttonLogin.click();
+    }
     open () {
         return super.open('/'); // NOTE: will open https://www.saucedemo.com/
     }

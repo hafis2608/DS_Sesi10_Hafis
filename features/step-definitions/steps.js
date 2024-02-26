@@ -15,6 +15,21 @@ Then(/^Hafis should see home page$/, async() => {
     await HomePage.validateHomePage()
 })
 
-Then(/^Hafis should see error "(.*)"$/, async (message) => {
-    await LoginPage.validateLockedOutUserError(message)
+Then(/^Hafis should see error "(.*)"$/, async (dynamicMessage) => {
+    await LoginPage.validateLockedOutUserError(dynamicMessage)
 }) 
+
+When(/^Hafis login with "(.*)"$/, async (name) => {
+    await LoginPage.login(name)
+})
+
+
+
+
+
+
+
+
+
+
+
